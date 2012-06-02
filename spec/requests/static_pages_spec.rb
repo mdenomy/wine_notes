@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+  let(:base_title) {"WineNotes"}
+
   describe "home" do
     it "should have the content WineNotes" do
       visit '/static_pages/home'
@@ -9,7 +11,7 @@ describe "StaticPages" do
 
     it "should have a title of Home" do
       visit '/static_pages/home'
-      page.should have_selector('title', :text => 'WineNotes | Home' )
+      page.should have_selector('title', :text => "#{base_title} | Home" )
     end
   end
 
@@ -21,7 +23,7 @@ describe "StaticPages" do
 
     it "should have a title of Help" do
       visit '/static_pages/help'
-      page.should have_selector('title', :text => 'WineNotes | Help' )
+      page.should have_selector('title', :text => "#{base_title} | Help" )
     end
   end
 
@@ -33,7 +35,7 @@ describe "StaticPages" do
 
     it "should have a title of About" do
       visit '/static_pages/about'
-      page.should have_selector('title', :text => 'WineNotes | About' )
+      page.should have_selector('title', :text => "#{base_title} | About" )
     end
   end
 

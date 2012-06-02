@@ -13,4 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore rvm bundler_stubs and IDE
+bundler_stubs
 .idea

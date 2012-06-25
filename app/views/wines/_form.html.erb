@@ -1,9 +1,9 @@
 <%= simple_form_for @wine do |f| %>
   <%= f.input :producer %>
   <%= f.input :brand_name %>
-  <%= f.input :year, :collection => 1990..2012%>
-  <%= f.input :grape_wine_name, :label => 'Grape or wine name' %>
-  <%= f.input :color, :collection => ["Red", "White", "Rose"]%>
-  <%= f.input :classification, :collection => ["Table", "Sparkling", "Dessert"]%>
+  <%= f.input :year, :collection => 1990..2012 %>
+  <%= f.input :grape_wine_name, :label => 'Grape/Region' %>
+  <%= f.input :color, :collection => ["Red", "White", "Rose"] %>
+  <%= f.input :classification, :collection => ["Table", "Sparkling", "Dessert"] %>
   <%= f.button :submit %>
 <% end %>

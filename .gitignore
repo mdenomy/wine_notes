@@ -17,3 +17,5 @@
 # Ignore rvm bundler_stubs and IDE
 bundler_stubs
 .idea
+
+/public/assets

@@ -24,7 +24,7 @@ describe WinesController do
   # Wine. As you add validations to Wine, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    { producer: "Over The Top", brand_name: "Mongo Bongo" }
   end
   
   # This should return the minimal set of values that should be in the session

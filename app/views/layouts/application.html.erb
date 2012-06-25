@@ -9,7 +9,8 @@
 <header class="navbar navbar-fixed-top">
    <div class="navbar-inner">
      <div class="container">
-        <nav>
+       <%= link_to "sample app", '#', id: "logo" %>
+       <nav>
          <ul class="nav pull-right">
            <li><%= link_to "Home",    '#' %></li>
            <li><%= link_to "Help",    '#' %></li>
@@ -18,7 +19,7 @@
        </nav>
      </div>
    </div>
-</header>
+ </header>
  <div class="container">
    <%= yield %>
  </div>

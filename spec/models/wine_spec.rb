@@ -8,6 +8,8 @@ describe Wine do
 
   subject { @wine }
 
+  it { should respond_to(:reviews)}
+
   describe "requires a producer" do
     before { @wine.producer = " " }
     it { should_not be_valid }

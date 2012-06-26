@@ -3,4 +3,6 @@ class Wine < ActiveRecord::Base
 
   validates :producer,    presence: true
   validates :brand_name,  presence: true
+
+  has_many  :reviews
 end

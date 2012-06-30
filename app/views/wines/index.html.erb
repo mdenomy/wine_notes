@@ -7,7 +7,7 @@
         <th>Producer</th>
         <th>Brand name</th>
         <th>Year</th>
-        <th>Grape wine name</th>
+        <th>Grape/Region</th>
         <th>Color</th>
         <th>Classification</th>
         <th></th>
@@ -24,8 +24,8 @@
           <td><%= wine.grape_wine_name %></td>
           <td><%= wine.color %></td>
           <td><%= wine.classification %></td>
-          <td><%= link_to 'Show', wine, :class => "btn btn-info btn-small" %></td>
-          <td><%= link_to 'Edit', edit_wine_path(wine), :class => "btn btn-primary btn-small" %></td>
+          <td><%= link_to 'Show', wine, :class => "btn btn-primary btn-small" %></td>
+          <td><%= link_to 'Edit', edit_wine_path(wine), :class => "btn btn-info btn-small" %></td>
           <td><%= link_to 'Destroy', wine, :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
         </tr>
       <% end %>

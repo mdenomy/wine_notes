@@ -5,7 +5,7 @@ end
 
 Factory.define :user do |user|
   user.name                   "Miquel"
-  user.email                  "mdenomy@gmail.com"
+  user.email                  "somebody@someplace.org"
   user.password               "foobar"
   user.password_confirmation  "foobar"
 end

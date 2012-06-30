@@ -1,33 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h1>
+  <%= @wine.full_name %>
+</h1>
 
 <p>
-  <b>Producer:</b>
-  <%= @wine.producer %>
+<b>Grape/Region: </b>
+<% unless @wine.grape_wine_name.blank? %>
+     <%= @wine.grape_wine_name %>
+<% else %>
+     Unknown
+<% end %>
 </p>
 
 <p>
-  <b>Brand name:</b>
-  <%= @wine.brand_name %>
-</p>
-
-<p>
-  <b>Year:</b>
-  <%= @wine.year %>
-</p>
-
-<p>
-  <b>Grape wine name:</b>
-  <%= @wine.grape_wine_name %>
-</p>
-
-<p>
-  <b>Color:</b>
+<% unless @wine.color.blank? && @wine.classification.blank? %>
   <%= @wine.color %>
-</p>
-
-<p>
-  <b>Classification:</b>
   <%= @wine.classification %>
+  Wine
+<% end %>
 </p>
 
 

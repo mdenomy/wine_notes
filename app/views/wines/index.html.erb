@@ -1,33 +1,37 @@
-<h1>Listing wines</h1>
+<div class="center hero-unit">
+  <h1>Wine List</h1>
+</div>
+  <table class="table table-striped">
+  <thead>
+      <tr>
+        <th>Producer</th>
+        <th>Brand name</th>
+        <th>Year</th>
+        <th>Grape wine name</th>
+        <th>Color</th>
+        <th>Classification</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <% @wines.each do |wine| %>
+        <tr>
+          <td><%= wine.producer %></td>
+          <td><%= wine.brand_name %></td>
+          <td><%= wine.year %></td>
+          <td><%= wine.grape_wine_name %></td>
+          <td><%= wine.color %></td>
+          <td><%= wine.classification %></td>
+          <td><%= link_to 'Show', wine, :class => "btn btn-info btn-small" %></td>
+          <td><%= link_to 'Edit', edit_wine_path(wine), :class => "btn btn-primary btn-small" %></td>
+          <td><%= link_to 'Destroy', wine, :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
+        </tr>
+      <% end %>
 
-<table>
-  <tr>
-    <th>Producer</th>
-    <th>Brand name</th>
-    <th>Year</th>
-    <th>Grape wine name</th>
-    <th>Color</th>
-    <th>Classification</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @wines.each do |wine| %>
-  <tr>
-    <td><%= wine.producer %></td>
-    <td><%= wine.brand_name %></td>
-    <td><%= wine.year %></td>
-    <td><%= wine.grape_wine_name %></td>
-    <td><%= wine.color %></td>
-    <td><%= wine.classification %></td>
-    <td><%= link_to 'Show', wine %></td>
-    <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
-    <td><%= link_to 'Destroy', wine, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  </tbody>
 </table>
 
 <br />
-
-<%= link_to 'New Wine', new_wine_path %>
+<%= link_to 'Add New Wine', new_wine_path, :class => "btn btn-primary" %>

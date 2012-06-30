@@ -5,4 +5,8 @@ class Wine < ActiveRecord::Base
   validates :brand_name,  presence: true
 
   has_many  :reviews
+
+  def full_name
+    "#{year} #{producer} #{brand_name}"
+  end
 end

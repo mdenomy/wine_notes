@@ -3,9 +3,7 @@
     <div class="container">
       <nav>
         <!-- Be sure to leave the brand out there if you want it shown -->
-        <div class="brand">
-        <%= link_to "WineNotes", root_path %>
-        </div>
+        <%= link_to "WineNotes", root_path, class: "brand" %>
         <ul class="nav pull-right">
            <% if signed_in? %>
             <li><%= link_to "Wines", wines_path %></li>

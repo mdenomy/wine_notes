@@ -6,11 +6,17 @@ body { padding-top: 60px; }
 @navbarBackgroundHighlight: #090648;
 @navbarText: #eee;
 @navbarLinkColor: #eee;
+@btnBackground: #a4a4a4;
+@btnBackgroundHighlight: lighten(@btnBackground, 30%);
 
 .navbar .brand {
   color: @navbarText;
 }
 
+.btn {
+    &.primary{
+        color: @white;
+    }
+}
 
-
-
+@linkColorHover: darken(@navbarBackground, 15%);

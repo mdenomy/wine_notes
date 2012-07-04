@@ -5,7 +5,7 @@ describe Review do
   let(:user) { Factory.create(:user)}
 
   before do
-    @review = Review.new(score: 3, date: DateTime.now)
+    @review = wine.reviews.build(score: 3, date: DateTime.now)
   end
 
   subject { @review }
@@ -63,6 +63,29 @@ describe Review do
       expect do
         Review.new(user_id: user.id)
       end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
+    end
+  end
+
+  describe "wines associations" do
+    let(:test_wine) { Factory.create(:wine)}
+
+    let!(:older_review) do
+      Factory.create(:review, wine: test_wine, date: 1.day.ago)
+    end
+    let!(:newer_review) do
+      Factory.create(:review, wine: test_wine, date: 1.hour.ago)
+    end
+
+    it "should have the review in the right order" do
+      test_wine.reviews.should == [newer_review, older_review]
+    end
+
+    it "should destroy associated reviews" do
+      reviews = test_wine.reviews
+      test_wine.destroy
+      reviews.each do |review|
+        Review.find_by_id(review.id).should be_nil
+      end
     end
   end
 end

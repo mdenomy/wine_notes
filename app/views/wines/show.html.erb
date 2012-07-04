@@ -1,3 +1,4 @@
+<% provide(:title, @wine.full_name) %>
 <h1>
   <%= @wine.full_name %>
 </h1>
@@ -19,6 +20,14 @@
 <% end %>
 </p>
 
+<p>
+  <% if @wine.reviews.any? %>
+    <h3>Reviews (<%= @wine.reviews.count %>)</h3>
+    <ol>
+      <%= render @wine.reviews %>
+    </ol>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_wine_path(@wine) %> |
 <%= link_to 'Back', wines_path %>

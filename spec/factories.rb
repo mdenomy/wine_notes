@@ -9,3 +9,10 @@ Factory.define :user do |user|
   user.password               "foobar"
   user.password_confirmation  "foobar"
 end
+
+Factory.define :review do |review|
+  review.date     DateTime.civil(2012, 1, 2)
+  review.notes    "hint of pencil shavings and elderberries"
+  review.score    3
+  review.wine    :wine
+end

@@ -4,7 +4,7 @@ class Wine < ActiveRecord::Base
   validates :producer,    presence: true
   validates :brand_name,  presence: true
 
-  has_many  :reviews
+  has_many  :reviews, dependent: :destroy
 
   def full_name
     "#{year} #{producer} #{brand_name}"

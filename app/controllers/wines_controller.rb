@@ -15,11 +15,7 @@ class WinesController < ApplicationController
   # GET /wines/1.json
   def show
     @wine = Wine.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @wine }
-    end
+    @reviews = @wine.reviews.paginate(page: params[:page])
   end
 
   # GET /wines/new

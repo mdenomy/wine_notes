@@ -8,6 +8,7 @@ class Review < ActiveRecord::Base
   belongs_to  :wine
   has_one     :user
 
+  default_scope order: 'reviews.date DESC'
 
 end
 

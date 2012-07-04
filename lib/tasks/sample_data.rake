@@ -13,8 +13,8 @@ namespace :db do
                         year: year)
     end
     wines = Wine.all(limit: 3)
-    5.times do
-      notes = Faker::Lorem.sentence(5)
+    20.times do
+      notes = Faker::Lorem.paragraph(5)
       score = 2
       wines.each { |wine| wine.reviews.create!(notes: notes, score: score, date: rand(2.years).ago) }
     end

@@ -6,6 +6,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'pg'
 gem 'simple_form'
 gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate'
 gem 'faker', '1.0.1'
 
 group :development, :test do

@@ -1,7 +1,9 @@
 WineNotes::Application.routes.draw do
   get "users/new"
 
-  resources :wines
+  resources :wines do
+    resources :reviews,  only: [:new, :create]
+  end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

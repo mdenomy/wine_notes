@@ -1,0 +1,10 @@
+<h1>Add New Review</h1>
+<h2><%= review_title(@wine) %></h2>
+<br/>
+<%= simple_form_for [@wine, @review], :html => { :class => 'form-vertical' } do |f| %>
+  <%= f.input :date, :as => :datepicker%>
+  <%= f.input :summary, :input_html => { rows: 1, class: "span5"} %>
+  <%= f.input :notes, :input_html => { rows: 8, class: "span10" }  %>
+  <%= f.input :score, :collection => 1..5 %>
+  <%= f.button :submit, "Save Review", class: "btn btn-primary" %>
+<% end %>

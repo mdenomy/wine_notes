@@ -21,6 +21,7 @@
 </p>
 
 <p>
+  <%= link_to 'Add Review', new_wine_review_path(@wine.id), :class => "btn btn-primary btn-large" %>
   <% if @wine.reviews.any? %>
     <h3>Reviews (<%= @wine.reviews.count %>)</h3>
     <ol class="reviews">

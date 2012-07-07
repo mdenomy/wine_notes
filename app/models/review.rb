@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  attr_accessible :date, :notes, :score
+  attr_accessible :date, :notes, :score, :summary
 
   validates :date,  presence:     true
   validates :score, presence:     true,

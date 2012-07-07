@@ -15,8 +15,8 @@ describe "Wines" do
   describe "details page" do
 
     let(:wine) { Factory.create(:wine) }
-    let!(:review1) { Factory.create(:review, wine: wine, notes: "Mmm mmm good") }
-    let!(:review2) { Factory.create(:review, wine: wine, notes: "Totally sucks") }
+    let!(:review1) { Factory.create(:review, wine: wine, summary: "Mmm mmm good") }
+    let!(:review2) { Factory.create(:review, wine: wine, summary: "Totally sucks") }
 
     before do
       visit wine_path(wine)
@@ -25,9 +25,10 @@ describe "Wines" do
     it { should have_selector('h1', text: wine.full_name) }
 
     describe "reviews" do
-      it { should have_content(review1.notes) }
-      it { should have_content(review2.notes) }
+      it { should have_content(review1.summary) }
+      it { should have_content(review2.summary) }
       it { should have_selector('h3', text: "2") }
+      it { should have_link("Add Review")}
     end
   end
 end

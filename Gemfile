@@ -7,6 +7,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate'
+gem 'bootstrap-datepicker-rails'
 gem 'faker', '1.0.1'
 
 group :development, :test do
@@ -35,6 +36,8 @@ group :test do
   gem 'spork', '0.9.0'
   gem 'factory_girl_rails'
 end
+
+gem 'debugger', group: [:development, :test]
 
 group :production do
 end

@@ -1,5 +1,7 @@
 <div class="center hero-unit">
-  <h1>Wine List</h1>
+  <h1><%= t "wines.headline", default: "Wine List" %></h1>
+
+  <em><%= t ".tagline", default: "Drink up." %></em>
 </div>
   <table class="table table-striped">
   <thead>
@@ -29,7 +31,6 @@
           <td><%= link_to 'Delete', wine, :class => "btn btn-danger btn-small", confirm: 'Are you sure?', method: :delete %></td>
         </tr>
       <% end %>
-
   </tbody>
 </table>
 

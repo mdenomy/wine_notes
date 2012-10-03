@@ -9,6 +9,7 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-datepicker-rails'
 gem 'faker', '1.0.1'
+gem 'copycopter_client', '~> 2.0.1'
 
 group :development, :test do
   gem 'rspec-rails', '2.10.0'

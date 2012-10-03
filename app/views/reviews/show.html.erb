@@ -1,0 +1,15 @@
+<h1><%= review_title(@review.wine) %></h1>
+<br/>
+<h3>Date</h3>
+<p><%= "#{@review.date.strftime("%m-%d-%y")}" %> </p>
+
+<h3>Score</h3>
+<p><%= "#{@review.score}" %> </p>
+
+<h3>Summary</h3>
+<p><%= "#{@review.summary}" %></p>
+
+<h3>Notes</h3>
+<p><%= "#{@review.notes}" %></p>
+
+<%= link_to "Back", wine_path(@review.wine), class: "btn btn-small" %>

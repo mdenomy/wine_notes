@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120703234829) do
   end
 
   add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
-  add_index "reviews", ["wine_id", "created_at"], :name => "index_reviews_on_wine_id_and_created_at"
+  add_index "reviews", ["wine_id", "date"], :name => "index_reviews_on_wine_id_and_date"
   add_index "reviews", ["wine_id"], :name => "index_reviews_on_wine_id"
 
   create_table "users", :force => true do |t|

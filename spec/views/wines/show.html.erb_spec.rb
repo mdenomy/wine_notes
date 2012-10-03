@@ -22,4 +22,8 @@ describe "wines/show" do
     rendered.should match(/Color/)
     rendered.should match(/Classification/)
   end
+
+  it "renders a list of reviews" do
+
+  end
 end

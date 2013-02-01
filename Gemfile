@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.11'
 gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'pg'
@@ -9,7 +9,7 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-datepicker-rails'
 gem 'faker', '1.0.1'
-gem 'copycopter_client', '~> 2.0.1'
+gem 'thin'
 
 group :development, :test do
   gem 'rspec-rails', '2.10.0'
@@ -38,7 +38,7 @@ group :test do
   gem 'factory_girl_rails'
 end
 
-gem 'debugger', group: [:development, :test]
+gem 'quiet_assets', group: :development
 
 group :production do
 end

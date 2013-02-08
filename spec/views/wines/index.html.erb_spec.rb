@@ -19,7 +19,7 @@ describe "wines/index" do
         :color => "Color",
         :classification => "Classification"
       )
-    ])
+    ]).stub!(:total_pages).and_return(0)
   end
 
   it "renders a list of wines" do

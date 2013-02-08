@@ -3,8 +3,7 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
-    @wines = Wine.all
-
+    @wines = Wine.paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @wines }
@@ -15,7 +14,7 @@ class WinesController < ApplicationController
   # GET /wines/1.json
   def show
     @wine = Wine.find(params[:id])
-    @reviews = @wine.reviews.paginate(page: params[:page], :per_page => 10)
+    @reviews = @wine.reviews.paginate(page: params[:page], :per_page => 5)
   end
 
   # GET /wines/new

@@ -16,3 +16,9 @@ Factory.define :review do |review|
   review.score    3
   review.wine    :wine
 end
+
+Factory.define :purchase do |purchase|
+  purchase.date   Date.today
+  purchase.store  Faker::Company.name
+  purchase.price  17.99
+end

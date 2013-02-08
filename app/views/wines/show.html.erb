@@ -1,60 +1,75 @@
 <% provide(:title, @wine.full_name) %>
-<h1>
+<h1 xmlns="http://www.w3.org/1999/html">
   <%= @wine.full_name %>
 </h1>
 
-<p>
-<b>Grape/Region: </b>
-<% unless @wine.grape_wine_name.blank? %>
-     <%= @wine.grape_wine_name %>
-<% else %>
-     Unknown
-<% end %>
-</p>
+<div class="tight">
 
-<p>
-<% unless @wine.color.blank? && @wine.classification.blank? %>
-  <%= @wine.color %>
-  <%= @wine.classification %>
-  Wine
-<% end %>
-</p>
+  <p>
+    <span class="subHeading">Grape/Region: </span>
+    <% unless @wine.grape_wine_name.blank? %>
+      <%= @wine.grape_wine_name %>
+    <% else %>
+      Unknown
+    <% end %>
+  </p>
 
-<p>
+  <p>
+    <% unless @wine.color.blank? && @wine.classification.blank? %>
+      <span class="subHeading">Style: </span>
+      <%= @wine.color %>
+      <%= @wine.classification %>
+      Wine
+    <% end %>
+  </p>
+
+  <% if @wine.reviews.any? %>
+    <p>
+
+    <div class="averageRating">
+      <span class="subHeading">Average Rating: </span>
+      <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
+    </div>
+    </p>
+  <% end %>
+</div>
+
+
+<div class="reviewSection">
   <%= link_to 'Add Review', new_wine_review_path(@wine.id), :class => "btn btn-primary" %>
   <% if @wine.reviews.any? %>
     <h3>Reviews (<%= @wine.reviews.count %>)</h3>
     <table class="table table-striped">
       <thead>
-            <tr>
-              <th>Score</th>
-              <th>Summary</th>
-              <th>Date</th>
-              <th></th>
-              <th></th>
-            </tr>
+      <tr>
+        <th>Rating</th>
+        <th>Summary</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+      </tr>
       </thead>
       <tbody>
-        <% @reviews.each do |review| %>
-          <tr>
-            <td><%= review.score %></td>
-            <td><%= review.summary %></td>
-            <td><%= review.date.strftime("%m/%d/%Y") %></td>
-            <td><%= link_to "Details", wine_review_path(@wine, review), :class => "btn btn-mini" %></td>
-            <td><%= link_to "Edit", edit_wine_review_path(@wine, review),
-                            :class => "btn btn-mini" %></td>
-            <td><%= link_to 'Delete', wine_review_path(@wine, review),
-                            :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
-          </tr>
-        <% end %>
-    </tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td><%= review.score %></td>
+          <td><%= review.summary %></td>
+          <td><%= review.date.strftime("%m/%d/%Y") %></td>
+          <td><%= link_to "Details", wine_review_path(@wine, review), :class => "btn btn-mini" %></td>
+          <td><%= link_to "Edit", edit_wine_review_path(@wine, review),
+                          :class => "btn btn-mini" %></td>
+          <td><%= link_to 'Delete', wine_review_path(@wine, review),
+                          :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
+        </tr>
+      <% end %>
+      </tbody>
     </table>
     <%= will_paginate @reviews %>
 
   <% end %>
-</p>
+</div>
 
 <div>
-<%= link_to 'Edit', edit_wine_path(@wine) %>
-<%= link_to 'Back', wines_path %>
+  <%= link_to 'Edit', edit_wine_path(@wine) %>
+  <%= link_to 'Back', wines_path %>
 </div>

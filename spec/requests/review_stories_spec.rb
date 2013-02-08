@@ -10,7 +10,7 @@ describe "ReviewStories" do
     end
 
     it "can save a review" do
-       fill_in "Date", with: "02/11/12"
+      fill_in "Date", with: "02/11/12"
       fill_in "Summary", with: "Yummy"
       select "3", from: "Score"
       click_button "Save Review"

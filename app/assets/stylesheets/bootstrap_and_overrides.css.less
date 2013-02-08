@@ -1,5 +1,9 @@
 @import "twitter/bootstrap/bootstrap";
-body { padding-top: 60px; }
+
+body {
+  padding-top: 60px;
+}
+
 @import "twitter/bootstrap/responsive";
 
 @navbarBackground: #4b44c6;
@@ -17,21 +21,36 @@ body { padding-top: 60px; }
 }
 
 .btn {
-    &.primary{
-        color: @white;
-    }
+  &.primary {
+    color: @white;
+  }
 }
 
 @linkColorHover: darken(@navbarBackground, 15%);
 
 .ui-datepicker {
-    font-size: 1.25em;
-    background-color: lighten(@btnBackground, 20%);
+  font-size: 1.25em;
+  background-color: lighten(@btnBackground, 20%);
 }
 
 .footerText {
   padding-top: 10px;
   font-size: small;
+}
+
+.subHeading {
+  font-weight: bold;
+}
+
+.tight {
+  p {
+    margin: 0px;
+  }
+}
+
+.reviewSection {
+  margin-top: 20px;
+
 }
 
 

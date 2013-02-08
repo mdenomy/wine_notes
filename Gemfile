@@ -12,6 +12,10 @@ gem 'bootstrap-datepicker-rails'
 gem 'faker', '1.0.1'
 gem 'thin'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 group :development, :test do
   gem 'rspec-rails', '2.10.0'
   gem 'guard-rspec', '0.5.5'

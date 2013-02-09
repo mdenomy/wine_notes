@@ -30,20 +30,20 @@ describe PurchasesController do
       end
     end
 
-    #describe "with invalid params" do
-    #  it "assigns a newly created but unsaved purchase as @purchase" do
-    #    # Trigger the behavior that occurs when invalid params are submitted
-    #    Purchase.any_instance.stub(:save).and_return(false)
-    #    post :create, wine_id: @wine, purchase: {}
-    #    assigns(:purchase).should be_a_new(Purchase)
-    #  end
-    #
-    #  it "re-renders the 'new' template on save error" do
-    #    # Trigger the behavior that occurs when invalid params are submitted
-    #    Wine.any_instance.stub(:save).and_return(false)
-    #    post :create, wine_id: @wine, purchase: {}
-    #    response.should render_template("new")
-    #  end
-    #end
+    describe "with invalid params" do
+      it "assigns a newly created but unsaved purchase as @purchase" do
+        # Trigger the behavior that occurs when invalid params are submitted
+        Purchase.any_instance.stub(:save).and_return(false)
+        post :create, wine_id: @wine, purchase: {}
+        assigns(:purchase).should be_a_new(Purchase)
+      end
+
+      it "re-renders the 'new' template on save error" do
+        # Trigger the behavior that occurs when invalid params are submitted
+        Wine.any_instance.stub(:save).and_return(false)
+        post :create, wine_id: @wine, purchase: {}
+        response.should render_template("new")
+      end
+    end
   end
 end

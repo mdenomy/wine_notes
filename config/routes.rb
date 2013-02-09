@@ -3,6 +3,7 @@ WineNotes::Application.routes.draw do
 
   resources :wines do
     resources :reviews
+    resources :purchases
   end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

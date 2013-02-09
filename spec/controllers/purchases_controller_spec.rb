@@ -3,14 +3,31 @@ require 'spec_helper'
 describe PurchasesController do
 
   def valid_attributes
-    { price: "19.99", store: "Fred's Discount Wines", date: "2012-01-02" }
+    {price: "19.99", store: "Fred's Discount Wines", date: "2012-01-02"}
+  end
+
+  before(:each) do
+    @wine = Factory.create(:wine)
+  end
+
+
+  describe "GET index" do
+    it "gets the purchases" do
+      get :index, wine_id: @wine
+      assigns(:purchases).should_not be_nil
+    end
+  end
+
+  describe "GET new" do
+    it "assigns a newly created purchase" do
+      get :new, wine_id: @wine
+      assigns(:purchase).should be_a(Purchase)
+    end
+
   end
 
 
   describe "POST create" do
-    before(:each) do
-      @wine = Factory.create(:wine)
-    end
     describe "with valid params" do
       it "creates a new purchase" do
         expect {

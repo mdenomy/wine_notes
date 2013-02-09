@@ -35,6 +35,10 @@
 </div>
 
 
+<div class="purchaseSection">
+  <%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary" %>
+ </div>
+
 <div class="reviewSection">
   <%= link_to 'Add Review', new_wine_review_path(@wine.id), :class => "btn btn-primary" %>
   <% if @wine.reviews.any? %>

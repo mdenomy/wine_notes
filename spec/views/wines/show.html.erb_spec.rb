@@ -23,4 +23,8 @@ describe "wines/show" do
     rendered.should match(/Classification/)
   end
 
+  it "has a link to view purchase history" do
+    render
+    assert_select "a[href$=#{wine_purchases_path(@wine.id)}]", :text => "Purchase History"
+  end
 end

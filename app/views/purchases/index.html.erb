@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h1>Purchase History</h1>
+</div>
+<% if @wine.purchases.any? %>
+  <h3>Purchases (<%= @wine.purchases.count %>)</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Price</th>
+      <th>Store</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.price %></td>
+        <td><%= purchase.store %></td>
+        <td><%= purchase.date.strftime("%m/%d/%Y") %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @purchases %>
+
+<% end %>
+
+  <%= link_to 'Add Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-primary" %>
+  <%= link_to "Back To Wine", wine_path(@wine), class: "btn btn-small" %>

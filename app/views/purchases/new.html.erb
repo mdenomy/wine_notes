@@ -1,0 +1,8 @@
+<h1>Add New Purchase</h1>
+<br/>
+<%= simple_form_for [@wine, @purchase], :html => { :class => 'form-vertical' } do |f| %>
+  <%= f.input :date, :as => :datepicker%>
+  <%= f.input :store, :input_html => { rows: 1, class: "span3"} %>
+  <%= f.input :price, :as => :currency %>
+  <%= f.button :submit, "Save Purchase", class: "btn btn-primary btn-small" %>
+<% end %>

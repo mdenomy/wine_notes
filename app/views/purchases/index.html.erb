@@ -9,6 +9,8 @@
       <th>Price</th>
       <th>Store</th>
       <th>Date</th>
+      <th></th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -17,6 +19,9 @@
         <td><%= purchase.price %></td>
         <td><%= purchase.store %></td>
         <td><%= purchase.date.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to "Edit", edit_wine_purchase_path(@wine, purchase), :class => "btn btn-mini" %></td>
+        <td><%= link_to 'Delete', wine_purchase_path(@wine, purchase),
+                         :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
       </tr>
     <% end %>
     </tbody>

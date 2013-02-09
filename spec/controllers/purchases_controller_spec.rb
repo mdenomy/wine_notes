@@ -41,9 +41,9 @@ describe PurchasesController do
         assigns(:purchase).should be_persisted
       end
 
-      it "redirects to the wine it belongs to " do
+      it "redirects to the wine purchases index" do
         post :create, wine_id: @wine, purchase: valid_attributes
-        response.should redirect_to(@wine)
+        response.should redirect_to wine_purchases_path(@wine)
       end
     end
 

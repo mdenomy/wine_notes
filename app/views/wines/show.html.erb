@@ -3,7 +3,7 @@
   <%= @wine.full_name %>
 </h1>
 
-<div class="tight">
+<div class="wineSummary">
 
   <p>
     <span class="subHeading">Grape/Region: </span>
@@ -32,12 +32,8 @@
     </div>
     </p>
   <% end %>
+  <%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary btn-mini" %>
 </div>
-
-
-<div class="purchaseSection">
-  <%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary" %>
- </div>
 
 <div class="reviewSection">
   <%= link_to 'Add Review', new_wine_review_path(@wine.id), :class => "btn btn-primary" %>
@@ -74,6 +70,6 @@
 </div>
 
 <div>
-  <%= link_to 'Edit', edit_wine_path(@wine) %>
-  <%= link_to 'Back', wines_path %>
+  <%= link_to 'Edit', edit_wine_path(@wine), :class => "btn btn-primary" %>
+  <%= link_to 'Back', wines_path , :class => "btn btn-primary" %>
 </div>

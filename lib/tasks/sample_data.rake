@@ -4,6 +4,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     make_wines
     make_reviews
+    make_purchases
   end
 end
 
@@ -38,6 +39,17 @@ def make_reviews
       notes = Faker::Lorem.paragraph(5)
       score = scores.sample
       wine.reviews.create!(summary: summary, notes: notes, score: score, date: rand(2.years).ago)
+    end
+  end
+end
+
+def make_purchases
+  Wine.limit(5).each do |wine|
+    rand(7).times do
+      date = rand(2.years).ago
+      store = Faker::Company.name
+      price = 10 + rand(25) + 0.99
+      wine.purchases.create!(date: date, store: store, price: price)
     end
   end
 end

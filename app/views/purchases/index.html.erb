@@ -16,7 +16,7 @@
     <tbody>
     <% @purchases.each do |purchase| %>
       <tr>
-        <td><%= purchase.price %></td>
+        <td>$<%= number_with_precision(purchase.price, precision: 2) %></td>
         <td><%= purchase.store %></td>
         <td><%= purchase.date.strftime("%m/%d/%Y") %></td>
         <td><%= link_to "Edit", edit_wine_purchase_path(@wine, purchase), :class => "btn btn-mini" %></td>

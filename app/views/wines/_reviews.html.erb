@@ -1,0 +1,30 @@
+<%= link_to 'Add Review', new_wine_review_path(@wine.id), :class => "btn btn-primary" %>
+<% if @wine.reviews.any? %>
+  <h3>Reviews (<%= @wine.reviews.count %>)</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Rating</th>
+      <th>Summary</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.score %></td>
+        <td><%= review.summary %></td>
+        <td><%= review.date.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to "Details", wine_review_path(@wine, review), :class => "btn btn-mini" %></td>
+        <td><%= link_to "Edit", edit_wine_review_path(@wine, review),
+                        :class => "btn btn-mini" %></td>
+        <td><%= link_to 'Delete', wine_review_path(@wine, review),
+                        :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @reviews %>
+<% end %>

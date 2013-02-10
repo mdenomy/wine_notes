@@ -25,51 +25,21 @@
 
   <% if @wine.reviews.any? %>
     <p>
-
     <div class="averageRating">
       <span class="subHeading">Average Rating: </span>
       <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
     </div>
     </p>
   <% end %>
-  <%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary btn-mini" %>
+  <%= render 'purchases' %>
+
 </div>
 
 <div class="reviewSection">
-  <%= link_to 'Add Review', new_wine_review_path(@wine.id), :class => "btn btn-primary" %>
-  <% if @wine.reviews.any? %>
-    <h3>Reviews (<%= @wine.reviews.count %>)</h3>
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Rating</th>
-        <th>Summary</th>
-        <th>Date</th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @reviews.each do |review| %>
-        <tr>
-          <td><%= review.score %></td>
-          <td><%= review.summary %></td>
-          <td><%= review.date.strftime("%m/%d/%Y") %></td>
-          <td><%= link_to "Details", wine_review_path(@wine, review), :class => "btn btn-mini" %></td>
-          <td><%= link_to "Edit", edit_wine_review_path(@wine, review),
-                          :class => "btn btn-mini" %></td>
-          <td><%= link_to 'Delete', wine_review_path(@wine, review),
-                          :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <%= will_paginate @reviews %>
-
-  <% end %>
+  <%= render 'reviews' %>
 </div>
 
 <div>
   <%= link_to 'Edit', edit_wine_path(@wine), :class => "btn btn-primary" %>
-  <%= link_to 'Back', wines_path , :class => "btn btn-primary" %>
+  <%= link_to 'Back', wines_path, :class => "btn btn-primary" %>
 </div>

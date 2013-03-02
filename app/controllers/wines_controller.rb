@@ -1,13 +1,8 @@
-
 class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
     @wines = Wine.paginate(:page => params[:page], :per_page => 10)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @wines }
-    end
   end
 
   # GET /wines/1
@@ -22,11 +17,6 @@ class WinesController < ApplicationController
   # GET /wines/new.json
   def new
     @wine = Wine.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @wine }
-    end
   end
 
   # GET /wines/1/edit
@@ -39,42 +29,31 @@ class WinesController < ApplicationController
   def create
     @wine = Wine.new(params[:wine])
 
-    respond_to do |format|
-      if @wine.save
-        format.html { redirect_to @wine, notice: 'Wine was successfully created.' }
-        format.json { render json: @wine, status: :created, location: @wine }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @wine.errors, status: :unprocessable_entity }
-      end
+    if @wine.save
+      redirect_to @wine, notice: 'Wine was successfully created.'
+    else
+      render action: "new"
     end
   end
 
-  # PUT /wines/1
-  # PUT /wines/1.json
+# PUT /wines/1
+# PUT /wines/1.json
   def update
     @wine = Wine.find(params[:id])
 
-    respond_to do |format|
-      if @wine.update_attributes(params[:wine])
-        format.html { redirect_to @wine, notice: 'Wine was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @wine.errors, status: :unprocessable_entity }
-      end
+    if @wine.update_attributes(params[:wine])
+      redirect_to @wine, notice: 'Wine was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 
-  # DELETE /wines/1
-  # DELETE /wines/1.json
+# DELETE /wines/1
+# DELETE /wines/1.json
   def destroy
     @wine = Wine.find(params[:id])
     @wine.destroy
-
-    respond_to do |format|
-      format.html { redirect_to wines_url }
-      format.json { head :no_content }
-    end
+    redirect_to wines_url
   end
 end
+

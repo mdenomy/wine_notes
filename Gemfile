@@ -12,15 +12,6 @@ gem 'bootstrap-datepicker-rails'
 gem 'faker', '1.0.1'
 gem 'thin'
 
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-end
-group :development, :test do
-  gem 'rspec-rails', '2.10.0'
-  gem 'guard-rspec', '0.5.5'
-end
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,6 +23,18 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+  gem 'pry-debugger'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '2.10.0'
+  gem 'guard-rspec', '0.5.5'
+end
+
 group :test do
   gem 'rspec-rails', '2.10.0'
   gem 'capybara', '1.1.2'
@@ -41,9 +44,4 @@ group :test do
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
   gem 'factory_girl_rails'
-end
-
-gem 'quiet_assets', group: :development
-
-group :production do
 end

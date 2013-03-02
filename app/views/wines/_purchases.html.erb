@@ -11,5 +11,6 @@
   </div>
   </p>
 <% end %>
-
-<%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary btn-mini" %>
+<div class="purchaseHistory">
+  <%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary btn-small" %>
+</div>

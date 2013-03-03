@@ -13,9 +13,13 @@
  *= require_tree .
  */
 
-.ui-datepicker {
-  font-size: 1.25em;
-}
+/*#ui-datepicker-div {*/
+  /*font-size: 1.25em;*/
+  /*background-color: #f5f5f5;*/
+  /*border: 1px solid black;*/
+  /*border-radius: 10px;*/
+  /*padding: 5px;*/
+/*}*/
 
 .footerText {
   padding-top: 10px;

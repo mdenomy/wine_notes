@@ -15,4 +15,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-$("input.date_picker").datepicker();
+$(function (){
+        $("input.date_picker").datepicker();
+});

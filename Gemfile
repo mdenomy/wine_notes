@@ -1,14 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'pg'
 gem 'simple_form'
 gem 'will_paginate', '3.0.3'
-gem 'will_paginate-bootstrap'
-gem 'bootstrap-will_paginate'
-gem 'bootstrap-datepicker-rails'
 gem 'faker', '1.0.1'
 gem 'thin'
 

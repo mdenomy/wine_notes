@@ -13,5 +13,31 @@
  *= require_tree .
  */
 
+.ui-datepicker {
+  font-size: 1.25em;
+}
+
+.footerText {
+  padding-top: 10px;
+  font-size: small;
+}
+
+.subHeading {
+  font-weight: bold;
+}
+
+.wineSummary {
+  margin-bottom: 10px;
+}
+
+.reviewSection {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.purchaseHistory {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 

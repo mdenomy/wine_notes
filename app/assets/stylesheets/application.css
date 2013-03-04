@@ -13,13 +13,43 @@
  *= require_tree .
  */
 
-/*#ui-datepicker-div {*/
-  /*font-size: 1.25em;*/
-  /*background-color: #f5f5f5;*/
-  /*border: 1px solid black;*/
-  /*border-radius: 10px;*/
-  /*padding: 5px;*/
-/*}*/
+div.navbar {
+    background: #d3d3d3;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.brand {
+    margin-top: 0px;
+    font-size: 44px;
+    text-decoration: none;
+    color:  #09077b;
+}
+
+div.container {
+    clear: both;
+}
+
+ul.nav.pull-right {
+    float: right;
+    margin-right: 20px;
+}
+ul.nav.pull-left {
+    float: left;
+}
+
+ul.nav.pull-right li {
+    display: inline-block;
+}
+
+.button-link {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: #09077b;
+    color: #FFF;
+    text-decoration: none;
+}
+
 
 .footerText {
   padding-top: 10px;

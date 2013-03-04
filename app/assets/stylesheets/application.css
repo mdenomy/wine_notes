@@ -21,6 +21,10 @@ h1, h3 {
     margin-bottom: 10px;
 }
 
+h3 {
+    margin-left: 20px;
+}
+
 div.navbar {
     background: #ffffff;
     height: 50px;
@@ -138,6 +142,17 @@ ul.nav.pull-right li {
     box-shadow: 2px 2px 2px #444444;
 }
 
+.btn-large {
+    padding: 20px 40px;
+    margin-top: 100px;
+    border-radius: 5px;
+    background: #a4a4a4;
+    color: #111111;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #444444;
+    display: block;
+}
+
 .btn-danger {
     background: red;
     box-shadow: 2px 2px 2px #444444;
@@ -189,5 +204,17 @@ div.pagination a {
 table.ratingTable {
     margin-bottom: 10px;
     margin-top: 10px;
+    float: left;
 }
 
+div.ratingButtonGroup {
+    float: right;
+}
+
+div.ratingButtonGroup  a{
+    display: block;
+}
+
+.averageRating {
+    margin-left: 20px;
+}

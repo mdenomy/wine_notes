@@ -20,14 +20,4 @@
   </div>
 </div>
 <div style="clear: both"></div>
-<% if @wine.reviews.any? %>
-  <p>
-  <div class="averageRating">
-    <span class="subHeading">Average Rating: </span>
-    <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
-  </div>
-  </p>
-<% end %>
-<div class="reviewSection">
   <%= render 'reviews' %>
-</div>

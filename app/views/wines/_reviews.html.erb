@@ -1,7 +1,15 @@
-<div class="reviewSection2">
+<div class="reviewSection">
 
   <% if @wine.reviews.any? %>
     <h3>Recent Reviews</h3>
+    <% if @wine.reviews.any? %>
+
+      <div class="averageRating">
+        <span class="subHeading">Average Rating: </span>
+        <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
+      </div>
+
+    <% end %>
 
     <table class="table ratingTable  span8">
       <thead>

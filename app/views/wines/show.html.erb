@@ -5,10 +5,14 @@
     <img class="labelImage" src="/assets/samplelabel.jpg">
   </div>
 
-  <div class="wineDetails span8">
+  <div class="wineDetails span4">
     <div class="wineYear"><%= @wine.year %></div>
     <div class="wineProducer"><%= @wine.producer %></div>
     <div class="wineName"><%= @wine.brand_name %></div>
+  </div>
+  <div class="wineQuickRatings span4">
+    <p>✯✯✯</p>
+    <p>$$</p>
     <div class="subHeading">
       <%= "#{@wine.color} #{@wine.classification.downcase} wine" %>
     </div>

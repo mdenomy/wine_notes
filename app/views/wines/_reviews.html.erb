@@ -4,13 +4,6 @@
     <h2>Recent Reviews</h2>
 
     <div class="span4 pull-left">
-      <% if @wine.reviews.any? %>
-        <div class="averageRating">
-          <span class="subHeading">Average Rating: </span>
-          <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
-        </div>
-
-      <% end %>
       <div class="ratingButtonGroup">
         <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
       </div>

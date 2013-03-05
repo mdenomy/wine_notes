@@ -10,6 +10,9 @@
     <div class="wineProducer"><%= @wine.producer %></div>
     <div class="wineName"><%= @wine.brand_name %></div>
     <div class="subHeading">
+      <%= "#{@wine.color} #{@wine.classification.downcase} wine" %>
+    </div>
+    <div class="subHeading">
       Grape/Region:
       <% unless @wine.grape_wine_name.blank? %>
         <%= @wine.grape_wine_name %>

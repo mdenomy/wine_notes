@@ -12,9 +12,19 @@
 *= require_tree .
 */
 
+#main {
+ margin:0 auto;
+ float:none;
+}
+
+html {
+    margin: 0 auto;
+    float: none;
+    float: none;
+}
 body {
     font-family: Helvetica;
-    margin: 0;
+    margin: 0 auto;
 }
 
 h1, h3 {
@@ -41,7 +51,8 @@ div.navbar-footer {
 }
 
 .wineHeading {
-    padding-top: 20px;
+    clear: both;
+    padding-top: 40px;
 }
 .footerText {
     padding-top: 8px;
@@ -57,12 +68,17 @@ div.navbar-footer {
     float: right;
 }
 
+.wineYear {
+    font-size: 24px;
+}
+
 .wineProducer {
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .wineName {
     font-size: 64px;
+    margin-bottom: 10px;
 }
 
 .labelAndSpecs {
@@ -77,7 +93,7 @@ div.navbar-footer {
 }
 
 div.container {
-    clear: both;
+    margin: 0 auto;
 }
 
 ul.nav.pull-right {
@@ -98,10 +114,6 @@ ul.nav.pull-right li {
     font-size: 16px;
 }
 .dollarRating {
-    font-size: 24px;
-}
-
-.wineYear {
     font-size: 24px;
 }
 
@@ -160,7 +172,6 @@ ul.nav.pull-right li {
 }
 
 .subHeading {
-    margin-top: 10px;
     font-size: 16px;
 }
 

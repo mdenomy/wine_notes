@@ -1,15 +1,14 @@
 <div class="reviewSection">
+  <h2>Reviews</h2>
+
+  <div class="span3 pull-left">
+    <div class="ratingButtonGroup">
+      <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
+    </div>
+  </div>
 
   <% if @wine.reviews.any? %>
-    <h2>Recent Reviews</h2>
-
-    <div class="span4 pull-left">
-      <div class="ratingButtonGroup">
-        <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
-      </div>
-    </div>
-
-    <div class="span8">
+    <div class="span6">
       <table>
         <thead>
         </thead>

@@ -17,6 +17,10 @@
  float:none;
 }
 
+.nav {
+    padding-left: 0px;
+}
+
 html {
     margin: 0 auto;
     float: none;
@@ -32,13 +36,19 @@ h1,h2, h3 {
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 44px;
     font-weight: normal;
     color: #666666;
+    margin-top: 20px;
 }
 
 h3 {
     margin-left: 20px;
+}
+
+h4 {
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 div.navbar {
@@ -89,8 +99,9 @@ div.section-break {
 }
 
 .wineName {
-    font-size: 64px;
+    font-size: 72px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .labelAndSpecs {
@@ -126,7 +137,7 @@ ul.nav.pull-right li {
     font-size: 16px;
 }
 .dollarRating {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .btn-nav {
@@ -193,7 +204,7 @@ ul.nav.pull-right li {
 }
 
 .reviewSection {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 5px;
 }
@@ -244,12 +255,14 @@ div.ratingButtonGroup  a{
     display: block;
 }
 
-.averageRating {
+.averageRating p {
     font-size: 16px;
-
+    vertical-align: top;
+    margin: 0px;
+    font-style: italic;
 }
 
-div.span4, div.span8, div.span2, div.span1 {
+div.span1, div.span2, div.span3, div.span4, div.span6, div.span8 {
     margin-left: 0px;
 }
 

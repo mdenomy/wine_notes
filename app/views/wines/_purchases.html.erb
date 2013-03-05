@@ -1,16 +1,44 @@
-<% if @wine.purchases.any? %>
-  <p>
+<div class="reviewSection">
 
-  <div class="averageRating">
-    <span class="subHeading">Average Price: </span>
-    $<%= number_with_precision(@wine.purchases.average(:price), precision: 2) %>
+  <div class="span3">
+  <h2>Prices</h2>
   </div>
-  <div class="averageRating">
-    <span class="subHeading">Best Price: </span>
-    $<%= number_with_precision(@wine.purchases.minimum(:price), precision: 2) %>
+  <div style="clear: both"></div>
+  <div class="span3 pull-left">
+    <div>
+      <% if @wine.purchases.any? %>
+        <div class="averageRating">
+          <p>Average Price:
+            $<%= number_with_precision(@wine.purchases.average(:price), precision: 2) %> </p>
+          <p>Best Price:
+            $<%= number_with_precision(@wine.purchases.minimum(:price), precision: 2) %> </p>
+        </div>
+      <% end %>
+      <br/>
+    </div>
+    <div class="ratingButtonGroup">
+      <%= link_to 'Record Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-large" %>
+      <%= link_to 'See All Purchases', wine_purchases_path(@wine.id), :class => "btn btn-large" %>
+    </div>
   </div>
-  </p>
-<% end %>
-<div class="purchaseHistory">
-  <%= link_to 'Purchase History', wine_purchases_path(@wine.id), :class => "btn btn-primary btn-small" %>
+  <div class="span6">
+    <h4>Recent Purchases</h4>
+    <table>
+      <thead>
+      </thead>
+      <tbody>
+      <% @purchases.each do |purchase| %>
+        <tr>
+          <td><%= "$#{number_with_precision(purchase.price, precision: 2)} on #{purchase.date} at #{purchase.store}" %></td>
+        </tr>
+        <tr>
+          <td class="spaceRow">&nbsp;</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @reviews %>
+
+  </div>
 </div>
+

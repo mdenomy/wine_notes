@@ -2,7 +2,7 @@
 
 <div class="wineHeading">
   <div class="span3">
-    <img class="labelImage" src="/assets/samplelabel.jpg">
+    <img class="labelImage" src="/assets/sample-label-2.jpg">
   </div>
 
   <div class="wineDetails span5">
@@ -11,8 +11,8 @@
     <div class="wineName"><%= @wine.brand_name %></div>
   </div>
   <div class="wineQuickRatings span3">
-    <p>✯✯✯</p>
-    <p>$$</p>
+    <p class="starRating">✯✯✯</p>
+    <p class="dollarRating">$$</p>
     <p>&nbsp</p>
     <div class="subHeading">
       <%= "#{@wine.color} #{@wine.classification.downcase} wine" %>

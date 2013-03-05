@@ -13,8 +13,8 @@
 */
 
 #main {
- margin:0 auto;
- float:none;
+    margin: 0 auto;
+    float: none;
 }
 
 .nav {
@@ -26,19 +26,22 @@ html {
     float: none;
     float: none;
 }
+
 body {
     font-family: Helvetica;
     margin: 0 auto;
+    background-color: rgba(254, 255, 209, 0.2);
+    color: rgba(79, 38, 28, 0.93);
 }
 
-h1,h2, h3 {
+h1, h2, h3 {
     margin-bottom: 10px;
 }
 
 h2 {
     font-size: 44px;
-    font-weight: normal;
-    color: #666666;
+    font-style: bold;
+    color: rgba(79, 45, 39, 0.85);
     margin-top: 20px;
 }
 
@@ -52,24 +55,21 @@ h4 {
 }
 
 div.navbar {
-    background: #ffffff;
     height: 50px;
-    box-shadow: 0px 2px 0px #888888;
+    box-shadow: 0px 2px 0px rgba(79, 45, 39, 0.75);
     margin: 0 auto;
 }
 
 div.navbar-footer {
-    background: #d3d3d3;
     height: 30px;
-    border-radius: 3px;
-    box-shadow: 0px -2px 2px #888888;
+    box-shadow: 0px -2px 0px rgba(79, 45, 39, 0.75);
 
 }
 
 div.section-break {
     background: #e6e6e6;
     height: 1px;
-    box-shadow: 0px 1px 1px #aaaaaa;
+    box-shadow: 0px 1px 1px rgba(79, 45, 39, 0.5);
     margin-top: 20px;
 }
 
@@ -77,11 +77,13 @@ div.section-break {
     clear: both;
     padding-top: 30px;
 }
+
 .footerText {
     padding-top: 8px;
     padding-left: 5px;
     font-size: small;
 }
+
 .yearAndRating {
     float: left;
 }
@@ -94,9 +96,11 @@ div.section-break {
 
 .wineYear {
     font-size: 24px;
+    font-style: italic;
 }
 
 .wineProducer {
+    font-style: italic;
     font-size: 24px;
 }
 
@@ -109,12 +113,14 @@ div.section-break {
 .labelAndSpecs {
     margin-top: 20px;
 }
+
 .brand {
     margin-top: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+    padding-top: 6px;
     font-size: 32px;
     text-decoration: none;
-    color: #444444;
+    color: #80042c;
 }
 
 div.container {
@@ -137,16 +143,22 @@ ul.nav.pull-right li {
 
 .starRating {
     font-size: 16px;
+    /*color: #ac1f15;*/
+    color: #ad3909;
 }
+
+
 .dollarRating {
     font-size: 16px;
 }
 
 .btn-nav {
-    padding: 0px 12px;
+    padding: 6px 12px;
     margin-bottom: 4px;
-    background: #ffffff;
-    color: #444444;
+    border-radius: 2px;
+    /*background: #5d2131;*/
+    background: #80042c;
+    color: #eeeeee;
     text-decoration: none;
 }
 
@@ -182,9 +194,9 @@ ul.nav.pull-right li {
 .btn-large {
     padding: 10px 20px;
     margin-top: 5px;
-    border-radius: 5px;
-    background: #a4a4a4;
-    color: #111111;
+    border-radius: 4px;
+    background: #80042c;
+    color: rgba(254, 255, 209, 0.9);
     text-decoration: none;
     box-shadow: 2px 2px 2px #444444;
     display: block;
@@ -215,7 +227,6 @@ ul.nav.pull-right li {
 
 }
 
-
 .purchaseHistory {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -231,6 +242,7 @@ div.pagination .previous_page {
     border: 1px solid black;
     border-radius: 3px;
 }
+
 div.pagination .current {
     padding: 4px;
     border: 1px solid black;
@@ -253,7 +265,7 @@ div.ratingButtonGroup {
     float: left;
 }
 
-div.ratingButtonGroup  a{
+div.ratingButtonGroup  a {
     display: block;
 }
 
@@ -282,8 +294,9 @@ div.span1, div.span2, div.span3, div.span4, div.span5, div.span6, div.span8, div
 }
 
 .reviewDate {
-    color: #888888;
     font-style: italic;
+    color: rgba(79, 45, 39, 0.50);
+
 }
 
 td.spaceRow {

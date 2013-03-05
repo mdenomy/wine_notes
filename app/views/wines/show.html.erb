@@ -5,7 +5,7 @@
     <img class="labelImage" src="/assets/samplelabel.jpg">
   </div>
 
-  <div class="wineDetails span6">
+  <div class="wineDetails span5">
     <div class="wineYear"><%= @wine.year %></div>
     <div class="wineProducer"><%= @wine.producer %></div>
     <div class="wineName"><%= @wine.brand_name %></div>
@@ -30,9 +30,6 @@
 <div style="clear: both"></div>
 <div class="section-break">
   <%= render 'reviews' %>
-</div>
-<div style="clear: both"></div>
-<div class="section-break">
   <%= render 'purchases' %>
 </div>
 <div style="clear: both"></div>

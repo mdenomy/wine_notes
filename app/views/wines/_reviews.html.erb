@@ -1,39 +1,45 @@
 <div class="reviewSection">
 
   <% if @wine.reviews.any? %>
-    <h3>Recent Reviews</h3>
-    <% if @wine.reviews.any? %>
+    <h2>Recent Reviews</h2>
 
-      <div class="averageRating">
-        <span class="subHeading">Average Rating: </span>
-        <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
-      </div>
+    <div class="span4 pull-left">
+      <% if @wine.reviews.any? %>
+        <div class="averageRating">
+          <span class="subHeading">Average Rating: </span>
+          <%= number_with_precision(@wine.reviews.average(:score), precision: 1) %> / 5.0
+        </div>
 
-    <% end %>
-
-    <table class="table ratingTable  span8">
-      <thead>
-      <tr>
-        <th>Date</th>
-        <th>Rating</th>
-        <th>Summary</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @reviews.each do |review| %>
-        <tr>
-          <td><%= review.date.strftime("%m/%d/%Y") %></td>
-          <td><%= review.score %></td>
-          <td><%= review.summary %></td>
-        </tr>
       <% end %>
-      </tbody>
-    </table>
-    <%= will_paginate @reviews %>
-    <div class="span3">
       <div class="ratingButtonGroup">
         <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
       </div>
+    </div>
+
+    <div class="span8">
+      <table>
+        <thead>
+        </thead>
+        <tbody>
+        <% @reviews.each do |review| %>
+          <tr>
+            <td>
+              <% review.score.times do %>
+                ✯
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="reviewSummary"><%= review.summary %></td>
+          </tr>
+          <tr>
+            <td class="reviewDate"><%= review.date.strftime("%m/%d/%Y")%></td>
+          </tr>
+            <td class="spaceRow">&nbsp;</td>
+         <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @reviews %>
+    </div>
   <% end %>
-</div>
 </div>

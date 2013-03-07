@@ -56,8 +56,8 @@ div.section-break {
     background: #e6e6e6;
     height: 1px;
     box-shadow: 0px 1px 1px rgba(79, 45, 39, 0.5);
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 div.section-break2 {
@@ -70,7 +70,6 @@ div.section-break2 {
 
 .footerText {
     padding-top: 8px;
-    padding-left: 5px;
     font-size: small;
 }
 
@@ -98,9 +97,6 @@ div.section-break2 {
 }
 
 .brand {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding-top: 10px;
     font-size: 32px;
     text-decoration: none;
     color: #80042c;
@@ -111,11 +107,13 @@ div.section-break2 {
 ul.nav.pull-right {
     float: right;
     padding-top: 8px;
+    margin-left: 0px;
 }
 
 ul.nav.pull-left {
     float: left;
-    margin-right: 0px;
+    padding-left: 0px;
+    margin-top: 9px;
 }
 
 ul.nav.pull-right li {
@@ -127,8 +125,11 @@ ul.nav.pull-right li {
     color: #ad3909;
 }
 
+.regularText p {
+    font-size: 16px;
+}
 
-.dollarRating {
+p.dollarRating {
     font-size: 16px;
 }
 
@@ -176,7 +177,7 @@ ul.nav.pull-right li {
     background: #80042c;
     color: rgba(254, 255, 209, 0.9);
     text-decoration: none;
-    box-shadow: 2px 2px 2px #444444;
+    box-shadow: 2px 2px 1px #333333;
     display: block;
 }
 
@@ -274,6 +275,23 @@ div.wineQuickRatings p {
     margin-bottom: 0px;
     font-weight: bold;
 }
+
+div.wineQuickRatings p {
+    font-size: 32px;
+    vertical-align: top;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+div.wineQuickRatings p.dollarRating {
+    font-size: 32px;
+    vertical-align: top;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
 
 /*div.span3, div.span4, div.span5, div.span6, div.span7, div.span8 {*/
     /*border: 1px dotted black;*/

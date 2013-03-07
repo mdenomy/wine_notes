@@ -1,37 +1,40 @@
-<div class="reviewSection span3">
+<div class="reviewSection">
 
-  <div class="span3">
-  <h2>Prices</h2>
-  </div>
-  <div class="span3">
-    <div class="ratingButtonGroup">
-      <%= link_to 'Record Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-large" %>
-      <br/>
+  <div class="row">
+    <div class="span=4">
+      <h2>Prices</h2>
+
+      <div class="ratingButtonGroup">
+        <%= link_to 'Record Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-large" %>
+      </div>
     </div>
   </div>
-  <div class="span6">
-    <table>
-      <thead>
-      </thead>
-      <tbody>
-      <% @purchases.each do |purchase| %>
-        <tr>
-          <td><%= "$#{number_with_precision(purchase.price, precision: 2)}" %></td>
-        </tr>
-        <tr>
-          <td><%= purchase.store %></td>
-        </tr>
-        <tr>
-          <td class="reviewDate"><%= purchase.date %></td>
-        </tr>
-        <tr>
-          <td class="spaceRow">&nbsp;</td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <%= will_paginate @reviews %>
 
+  <div class="row">
+    <div class="span4">
+      <br/>
+      <table>
+        <thead>
+        </thead>
+        <tbody>
+        <% @purchases.each do |purchase| %>
+          <tr>
+            <td><%= "$#{number_with_precision(purchase.price, precision: 2)}" %></td>
+          </tr>
+          <tr>
+            <td><%= purchase.store %></td>
+          </tr>
+          <tr>
+            <td class="reviewDate"><%= purchase.date %></td>
+          </tr>
+          <tr>
+            <td class="spaceRow">&nbsp;</td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @reviews %>
+    </div>
   </div>
 </div>
 

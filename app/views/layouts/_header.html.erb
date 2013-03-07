@@ -1,16 +1,12 @@
 <header class="header">
-  <div class="span12 navbar">
-    <div class="container">
-      <nav>
-        <ul class="nav pull-left brand">
-          <%= link_to "WineNotes", root_path, class: "brand" %>
-        </ul>
+  <div class="row">
+    <div class="navbar">
+         <%= link_to "WineNotes", root_path, class: "brand" %>
         <ul class="nav pull-right">
           <li><%= link_to "Wines", wines_path, class: "btn-nav" %></li>
-          <li><%= link_to "Help", help_path, class: "btn-nav"  %></li>
-          <li><%= link_to "About", about_path, class: "btn-nav"  %></li>
+          <li><%= link_to "Help", help_path, class: "btn-nav" %></li>
+          <li><%= link_to "About", about_path, class: "btn-nav" %></li>
         </ul>
-      </nav>
     </div>
   </div>
 </header>

@@ -1,19 +1,24 @@
 <% provide(:title, @wine.full_name) %>
-
-<div class="wineHeading">
+<div class="row">
+  <div class="section-break2"></div>
+</div>
+<div class="row">
   <div class="span3">
     <img class="labelImage" src="/assets/sample-label-2.jpg">
   </div>
 
-  <div class="wineDetails span5">
+  <div class="span5">
     <div class="wineYear"><%= @wine.year %></div>
     <div class="wineProducer"><%= @wine.producer %></div>
     <div class="wineName"><%= @wine.brand_name %></div>
   </div>
-  <div class="wineQuickRatings span3">
+  <div class="wineQuickRatings span4">
     <p class="starRating">✯✯✯</p>
+
     <p class="dollarRating">$$</p>
+
     <p>&nbsp</p>
+
     <div class="subHeading">
       <%= "#{@wine.color} #{@wine.classification.downcase} wine" %>
     </div>
@@ -27,9 +32,15 @@
     </div>
   </div>
 </div>
-<div style="clear: both"></div>
-<div class="section-break">
-  <%= render 'reviews' %>
-  <%= render 'purchases' %>
-</div>
-<div style="clear: both"></div>
+<div class="row">
+  <div class="section-break">
+  </div>
+  <div class="row">
+    <div class="span8">
+      <%= render 'reviews' %>
+    </div>
+    <div class="span4">
+      <%= render 'purchases' %>
+    </div>
+
+  </div>

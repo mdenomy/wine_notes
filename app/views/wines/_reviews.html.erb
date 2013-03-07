@@ -1,40 +1,45 @@
+<div class="reviewSection">
 
-<div class="reviewSection span8">
-  <h2>Reviews</h2>
+  <div class="row">
+    <div class="span8">
+      <h2>Reviews</h2>
 
-  <div class="span3">
-    <div class="ratingButtonGroup">
-      <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
-      <br/>
+      <div class="ratingButtonGroup">
+        <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
+      </div>
     </div>
   </div>
-  <div style="clear: both"></div>
 
-  <% if @wine.reviews.any? %>
-    <div class="span6">
-      <table>
-        <thead>
-        </thead>
-        <tbody>
-        <% @reviews.each do |review| %>
-          <tr>
-            <td class="starRating">
-              <% review.score.times do %>
-                ✯
-              <% end %>
-            </td>
-          </tr>
-          <tr>
-            <td class="reviewSummary"><%= review.summary %></td>
-          </tr>
-          <tr>
-            <td class="reviewDate"><%= review.date.strftime("%m/%d/%Y")%></td>
-          </tr>
-            <td class="spaceRow">&nbsp;</td>
-         <% end %>
-        </tbody>
-      </table>
-      <%= will_paginate @reviews %>
+  <div class="row">
+    <div class="span8">
+      <br/>
+      <% if @wine.reviews.any? %>
+        <div>
+          <table>
+            <thead>
+            </thead>
+            <tbody>
+            <% @reviews.each do |review| %>
+              <tr>
+                <td class="starRating">
+                  <% review.score.times do %>
+                    ✯
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td class="reviewSummary"><%= review.summary %></td>
+              </tr>
+              <tr>
+                <td class="reviewDate"><%= review.date.strftime("%m/%d/%Y") %></td>
+              </tr>
+              <td class="spaceRow">&nbsp;</td>
+            <% end %>
+            </tbody>
+          </table>
+          <%= will_paginate @reviews %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>

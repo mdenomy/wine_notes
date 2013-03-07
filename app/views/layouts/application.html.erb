@@ -3,22 +3,19 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-<%= render 'layouts/header' %>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-  <div class="container">
-    <%= yield %>
-  </div>
-    <div style="clear: both">
-      <%= render 'layouts/footer' %>
-    </div>
- </div>
+  <%= render 'layouts/header' %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+</div>
+</div>
 </body>
 </html>

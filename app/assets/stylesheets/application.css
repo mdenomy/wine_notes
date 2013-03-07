@@ -13,17 +13,12 @@
 */
 
 
-#main {
+div.container {
     margin: 0 auto;
-    float: none;
 }
 
-.nav {
-    padding-left: 0px;
-}
 
 html {
-    margin: 0 auto;
     float: none;
     float: none;
 }
@@ -31,7 +26,6 @@ html {
 body {
       /*font-family: Helvetica;*/
     font-family: 'Lato', sans-serif;
-    margin: 0 auto;
     background-color: rgba(254, 255, 209, 0.2);
     color: rgba(79, 38, 28, 0.93);
 }
@@ -47,19 +41,9 @@ h2 {
     margin-top: 0px;
 }
 
-h3 {
-    margin-left: 20px;
-}
-
-h4 {
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-
 div.navbar {
     height: 60px;
     box-shadow: 0px 2px 0px rgba(79, 45, 39, 0.75);
-    margin: 0 auto;
 }
 
 div.navbar-footer {
@@ -73,10 +57,14 @@ div.section-break {
     height: 1px;
     box-shadow: 0px 1px 1px rgba(79, 45, 39, 0.5);
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.section-break2 {
+    margin-top: 20px;
 }
 
 .wineHeading {
-    clear: both;
     padding-top: 30px;
 }
 
@@ -86,15 +74,6 @@ div.section-break {
     font-size: small;
 }
 
-.yearAndRating {
-    float: left;
-}
-
-.wineDetails {
-    margin: 0px;
-    float: right;
-    padding-right: 20px;
-}
 
 .wineYear {
     font-size: 24px;
@@ -128,9 +107,6 @@ div.section-break {
     font-weight: 900;
 }
 
-div.container {
-    margin: 0 auto;
-}
 
 ul.nav.pull-right {
     float: right;
@@ -148,7 +124,6 @@ ul.nav.pull-right li {
 
 .starRating {
     font-size: 16px;
-    /*color: #ac1f15;*/
     color: #ad3909;
 }
 
@@ -161,7 +136,6 @@ ul.nav.pull-right li {
     padding: 12px 0px 12px 18px;
     margin-bottom: 8px;
     border-radius: 2px;
-    /*background: #80042c;*/
     color: #80042c;
     text-decoration: none;
 }
@@ -222,16 +196,6 @@ ul.nav.pull-right li {
     float: left;
 }
 
-.reviewSection {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-}
-
-.section-header {
-
-}
-
 .purchaseHistory {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -281,17 +245,12 @@ div.ratingButtonGroup  a {
     font-style: italic;
 }
 
-div.span1, div.span2, div.span3, div.span4, div.span5, div.span6, div.span8, div.span9 {
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
 .pull-left {
     float: left;
 }
 
 .pull-right {
-
+  float: right;
 }
 
 .reviewSummary {
@@ -311,6 +270,11 @@ td.spaceRow {
 div.wineQuickRatings p {
     font-size: 32px;
     vertical-align: top;
-    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     font-weight: bold;
 }
+
+/*div.span3, div.span4, div.span5, div.span6, div.span7, div.span8 {*/
+    /*border: 1px dotted black;*/
+/*}*/

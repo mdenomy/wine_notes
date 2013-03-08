@@ -19,12 +19,11 @@ describe "wines/show" do
     rendered.should match(/Brand Name/)
     rendered.should match(/1/)
     rendered.should match(/Grape Wine Name/)
-    rendered.should match(/Color/)
-    rendered.should match(/Classification/)
+    rendered.should match(/Color classification wine/)
   end
 
-  it "has a link to view purchase history" do
+  it "has a link to record a purchase" do
     render
-    assert_select "a[href$=#{wine_purchases_path(@wine.id)}]", :text => "Purchase History"
+    assert_select "a[href$=#{new_wine_purchase_path(@wine.id)}]", :text => "Record Purchase"
   end
 end

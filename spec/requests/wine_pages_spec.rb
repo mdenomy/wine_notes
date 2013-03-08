@@ -22,17 +22,12 @@ describe "Wines" do
       visit wine_path(wine)
     end
 
-    it { should have_selector('h1', text: wine.full_name) }
+    it { should have_content(wine.full_name) }
 
     describe "reviews" do
       it { should have_content(review1.summary) }
       it { should have_content(review2.summary) }
-      it { should have_selector('h3', text: "2") }
-      it { should have_link("Add Review")}
-    end
-
-    it "should have the average rating" do
-      page.should have_selector('.averageRating', text: "3.0")
+      it { should have_link("Rate It!")}
     end
   end
 end

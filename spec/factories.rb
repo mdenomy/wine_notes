@@ -1,6 +1,7 @@
 Factory.define :wine do |wine|
   wine.producer    "Muddy Rudder Vineyards"
   wine.brand_name  "Dinghy"
+  wine.classification "Table"
 end
 
 Factory.define :user do |user|

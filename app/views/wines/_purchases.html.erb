@@ -13,27 +13,29 @@
   <div class="row">
     <div class="span4">
       <br/>
-      <table>
-        <thead>
-        </thead>
-        <tbody>
-        <% @purchases.each do |purchase| %>
-          <tr>
-            <td><%= "$#{number_with_precision(purchase.price, precision: 2)}" %></td>
-          </tr>
-          <tr>
-            <td><%= purchase.store %></td>
-          </tr>
-          <tr>
-            <td class="reviewDate"><%= purchase.date %></td>
-          </tr>
-          <tr>
-            <td class="spaceRow">&nbsp;</td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <%= will_paginate @reviews %>
+      <% unless @purchases.nil? %>
+        <table>
+          <thead>
+          </thead>
+          <tbody>
+          <% @purchases.each do |purchase| %>
+            <tr>
+              <td><%= "$#{number_with_precision(purchase.price, precision: 2)}" %></td>
+            </tr>
+            <tr>
+              <td><%= purchase.store %></td>
+            </tr>
+            <tr>
+              <td class="reviewDate"><%= purchase.date %></td>
+            </tr>
+            <tr>
+              <td class="spaceRow">&nbsp;</td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= will_paginate @purchases %>
+      <% end %>
     </div>
   </div>
 </div>

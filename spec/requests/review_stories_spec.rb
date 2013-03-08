@@ -6,7 +6,7 @@ describe "ReviewStories" do
     before(:each) do
       @vino = Factory.create(:wine, producer: "Something Wines")
       visit wine_url @vino
-      click_link "Add Review"
+      click_link "Rate It!"
     end
 
     it "can save a review" do

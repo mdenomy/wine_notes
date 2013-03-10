@@ -15,7 +15,7 @@ class PurchasesController < ApplicationController
     logger.info "Creating a purchase for wine #{@wine.full_name}"
     @purchase = @wine.purchases.build(params[:purchase])
     if @purchase.save
-      redirect_to wine_purchases_path(@wine)
+      redirect_to wine_path(@wine)
     else
       logger.error "Failed to save the purchase #{@purchase.inspect} for wine #{@wine.full_name}"
       render :new

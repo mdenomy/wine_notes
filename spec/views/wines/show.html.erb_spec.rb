@@ -24,6 +24,6 @@ describe "wines/show" do
 
   it "has a link to record a purchase" do
     render
-    assert_select "a[href$=#{new_wine_purchase_path(@wine.id)}]", :text => "Record Purchase"
+    assert_select "a[href$=#{new_wine_purchase_path(@wine.id)}]", :text => "Add Purchase"
   end
 end

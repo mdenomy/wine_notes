@@ -8,9 +8,10 @@ class WinesController < ApplicationController
   # GET /wines/1
   # GET /wines/1.json
   def show
+
     @wine = Wine.find(params[:id])
-    @reviews = @wine.reviews.paginate(page: params[:page], :per_page => 5)
-    @purchases = @wine.purchases.paginate(page: params[:page], :per_page => 3)
+    @reviews = @wine.reviews.paginate(page: params["reviews_page"], :per_page => 5)
+    @purchases = @wine.purchases.paginate(page: params["purchases_page"], :per_page => 5)
   end
 
   # GET /wines/new

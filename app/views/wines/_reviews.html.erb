@@ -1,20 +1,21 @@
 <div class="reviewSection">
 
   <div class="row">
-    <div class="span8">
-      <h2>Reviews</h2>
 
-      <div class="ratingButtonGroup">
-        <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
-      </div>
+    <div class="span3">
+      <span class="my-h2">Reviews</span>
+    </div>
+
+    <div class="span2">
+      <%= link_to 'Rate It!', new_wine_review_path(@wine.id), :class => "btn btn-large" %>
     </div>
   </div>
 
   <div class="row">
     <div class="span8">
-      <br/>
       <% if @wine.reviews.any? %>
         <div>
+          <%= will_paginate @reviews, :param_name => 'reviews_page', :page_links => false %>
           <table>
             <thead>
             </thead>
@@ -37,7 +38,6 @@
             <% end %>
             </tbody>
           </table>
-          <%= will_paginate @reviews %>
         </div>
       <% end %>
     </div>

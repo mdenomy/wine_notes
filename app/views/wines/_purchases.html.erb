@@ -1,19 +1,19 @@
 <div class="reviewSection">
 
   <div class="row">
-    <div class="span=4">
-      <h2>Prices</h2>
-
-      <div class="ratingButtonGroup">
-        <%= link_to 'Record Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-large" %>
-      </div>
+    <div class="span=1">
+      <span class="my-h2">Prices</span>
     </div>
+
+      <div class="span2">
+        <%= link_to 'Add Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-large" %>
+      </div>
   </div>
 
   <div class="row">
     <div class="span4">
-      <br/>
       <% unless @purchases.nil? %>
+        <%= will_paginate @purchases, :param_name => 'purchases_page', :page_links => false %>
         <table>
           <thead>
           </thead>
@@ -34,7 +34,6 @@
           <% end %>
           </tbody>
         </table>
-        <%= will_paginate @purchases %>
       <% end %>
     </div>
   </div>

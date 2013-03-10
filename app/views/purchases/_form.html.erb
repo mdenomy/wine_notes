@@ -1,6 +1,22 @@
-<%= simple_form_for [@wine, @purchase], :html => { :class => 'form-vertical' } do |f| %>
-  <%= f.input :date, :as => :datepicker%>
-  <%= f.input :store, :input_html => { rows: 1, class: "span3"} %>
-  <%= f.input :price, :as => :currency %>
-  <%= f.button :submit, "Save Purchase", class: "btn btn-primary btn-small" %>
+<%= simple_form_for [@wine, @purchase], :html => {:class => 'form-vertical'} do |f| %>
+  <div class="row">
+    <%= f.input :date, :as => :datepicker, :input_html => {rows: 1, class: "span2"} %>
+  </div>
+  <div class="row">
+    <%= f.input :price, :as => :currency, :input_html => {rows: 1, class: "span2"}  %>
+  </div>
+  <div class="row">
+    <%= f.input :store, :input_html => {rows: 1, class: "span3"} %>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="span2 formButtonGroup">
+      <%= f.button :submit, "Save Purchase", class: "btn btn-primary btn-large" %>
+    </div>
+    <div class="span2">
+       <%= link_to "Cancel", wine_path(@wine), class: "btn btn-large btn-cancel" %>
+     </div>
+  </div>
 <% end %>
+
+

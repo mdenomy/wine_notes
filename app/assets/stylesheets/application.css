@@ -18,11 +18,6 @@ div.container {
 }
 
 
-html {
-    float: none;
-    float: none;
-}
-
 body {
       /*font-family: Helvetica;*/
     font-family: 'Lato', sans-serif;
@@ -41,7 +36,7 @@ h2 {
     margin-top: 0px;
 }
 
-.my-h2 {
+.wine-category {
     font-size: 44px;
     font-weight: normal;
     color: rgba(79, 45, 39, 0.85);
@@ -66,7 +61,7 @@ div.section-break {
     margin-bottom: 16px;
 }
 
-div.section-break2 {
+div.section-break-large {
     margin-top: 20px;
 }
 
@@ -109,7 +104,6 @@ div.section-break2 {
     font-weight: 900;
 }
 
-
 ul.nav.pull-right {
     float: right;
     padding-top: 8px;
@@ -139,6 +133,13 @@ p.dollarRating {
     font-size: 16px;
 }
 
+.btn {
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #444444;
+    background: #80042c;
+    color: rgba(254, 255, 209, 0.9);
+}
+
 .btn-nav {
     padding: 12px 0px 12px 18px;
     margin-bottom: 8px;
@@ -147,33 +148,17 @@ p.dollarRating {
     text-decoration: none;
 }
 
-.btn-primary {
-    padding: 5px 8px;
-    border-radius: 5px;
-    background: #09077b;
-    color: #FFF;
-    text-decoration: none;
-    box-shadow: 2px 2px 2px #444444;
-}
-
 .btn-small {
     padding: 5px 8px;
     margin: 5px 5px;
-    border-radius: 5px;
-    background: #09077b;
-    color: #FFF;
-    text-decoration: none;
-    box-shadow: 2px 2px 2px #444444;
+    border-radius: 3px;
 }
 
 .btn-mini {
-    padding: 1px 4px 1px 4px;
+    padding: 1px 3px 1px 3px;
     margin: 5px 5px;
-    border-radius: 5px;
-    background: #a4a4a4;
-    color: #111111;
-    text-decoration: none;
-    box-shadow: 2px 2px 2px #444444;
+    border-radius: 2px;
+    background: rgba(128, 4, 44, 0.75);
 }
 
 .btn-large {
@@ -192,12 +177,6 @@ p.dollarRating {
     color: rgba(254, 255, 209, 0.9);
 }
 
-.btn-danger {
-    background: red;
-    box-shadow: 2px 2px 2px #444444;
-    color: #fff;
-}
-
 .subHeading {
     font-size: 16px;
     color: rgba(79, 45, 39, 0.85);
@@ -206,11 +185,6 @@ p.dollarRating {
 .wineSummary {
     margin-bottom: 10px;
     float: left;
-}
-
-.purchaseHistory {
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 div.pagination {
@@ -222,23 +196,14 @@ div.pagination .disabled {
     color: rgba(128, 4, 44, 0.50);
 }
 
-div.pagination a {
-   text-decoration: none;
+div.pagination .current {
+    font-weight: bold;
     color: #80042c;
 }
 
-table.ratingTable {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    float: left;
-}
-
-div.ratingButtonGroup {
-    float: left;
-}
-
-div.ratingButtonGroup  a {
-    display: block;
+div.pagination a {
+   text-decoration: none;
+    color: #80042c;
 }
 
 .averageRating p {
@@ -268,14 +233,6 @@ div.ratingButtonGroup  a {
 
 td.spaceRow {
     font-size: 0.5em;
-}
-
-div.wineQuickRatings p {
-    font-size: 32px;
-    vertical-align: top;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-weight: bold;
 }
 
 div.wineQuickRatings p {
@@ -317,12 +274,10 @@ input[type="submit"] {
 
 div.formButtonGroup {
     margin-left: 0;
+    margin-bottom: 10px;
 }
 
 .my-bullet {
     font-size: 24px;
 }
 
-/*div.span3, div.span4, div.span5, div.span6, div.span7, div.span8 {*/
-    /*border: 1px dotted black;*/
-/*}*/

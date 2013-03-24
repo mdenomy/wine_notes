@@ -1,13 +1,28 @@
-<% provide(:title, 'Sign up')  %>
+<% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 <br/>
 <div>
-    <%= simple_form_for @user do |f| %>
-        <%= render 'shared/error_messages' %>
-        <%= f.input :name %>
-        <%= f.input :email %>
-        <%= f.input :password %>
-        <%= f.input :password_confirmation, :label => 'Confirmation' %>
-        <%= f.submit 'Create my account', class: "btn btn-primary" %>
-    <% end %>
+  <%= simple_form_for @user do |f| %>
+    <%= render 'shared/error_messages' %>
+    <div class="row">
+      <%= f.input :name, :input_html => {rows: 1, class: "span4"}  %>
+    </div>
+    <div class="row">
+      <%= f.input :email, :input_html => {rows: 1, class: "span4"}  %>
+    </div>
+    <div class="row">
+      <%= f.input :password, :input_html => {rows: 1, class: "span4"}  %>
+    </div>
+    <div class="row">
+      <%= f.input :password_confirmation, :label => 'Confirmation', :input_html => {rows: 1, class: "span4"}  %>
+    </div>
+    <div class="row">
+      <div class="span2 formButtonGroup">
+        <%= f.submit 'Sign Up', class: "btn btn-large" %>
+      </div>
+      <div class="span2">
+        <%= link_to "Cancel", root_path, class: "btn btn-large btn-cancel" %>
+      </div>
+    </div>
+  <% end %>
 </div>

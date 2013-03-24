@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>Wine List</h1>
 </div>
-  <table class="table table-striped">
+  <table class="table">
   <thead>
       <tr>
         <th>Producer</th>
@@ -24,13 +24,17 @@
           <td><%= wine.grape_wine_name %></td>
           <td><%= wine.color %></td>
           <td><%= wine.classification %></td>
-          <td><%= link_to 'Details', wine, :class => "btn-mini" %></td>
+          <td><%= link_to 'Details', wine, :class => "btn btn-mini" %></td>
           <td><%= link_to 'Edit', edit_wine_path(wine), :class => "btn btn-mini" %></td>
-          <td><%= link_to 'Delete', wine, :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
+          <td><%= link_to 'Delete', wine, :class => "btn btn-mini", confirm: 'Are you sure?', method: :delete %></td>
         </tr>
       <% end %>
   </tbody>
 </table>
 <%= will_paginate @wines %>
 <br />
-<%= link_to 'Add New Wine', new_wine_path, :class => "btn btn-primary" %>
+<div class="row">
+  <div class="span3">
+    <%= link_to 'Add New Wine', new_wine_path, :class => "btn btn-large" %>
+  </div>
+</div>

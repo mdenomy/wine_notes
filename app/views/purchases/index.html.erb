@@ -21,7 +21,7 @@
         <td><%= purchase.date.strftime("%m/%d/%Y") %></td>
         <td><%= link_to "Edit", edit_wine_purchase_path(@wine, purchase), :class => "btn btn-mini" %></td>
         <td><%= link_to 'Delete', wine_purchase_path(@wine, purchase),
-                         :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
+                        :class => "btn btn-danger btn-mini", confirm: 'Are you sure?', method: :delete %></td>
       </tr>
     <% end %>
     </tbody>
@@ -29,9 +29,12 @@
   <%= will_paginate @purchases %>
 
 <% end %>
-
-<div class="container">
-  <%= link_to 'Add Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-primary" %>
-  <%= link_to "Back To Wine", wine_path(@wine), class: "btn btn-small" %>
+<br/>
+<div class="row">
+  <div class="span2 formButtonGroup">
+    <%= link_to 'Add Purchase', new_wine_purchase_path(@wine.id), :class => "btn btn-large" %>
+  </div>
+  <div class="span2">
+    <%= link_to "Back To Wine", wine_path(@wine), class: "btn btn-large btn-cancel" %>
+  </div>
 </div>
-

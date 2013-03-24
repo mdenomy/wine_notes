@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="section-break-large"></div>
+  <div class="row">
+    <div class="span3">
+      <img class="labelImage" src="/assets/sample-label-2.jpg">
+    </div>
+    <div class="span5">
+      <div class="wineYear"><%= @wine.year %></div>
+      <div class="wineProducer"><%= @wine.producer %></div>
+      <div class="wineName"><%= @wine.brand_name %></div>
+    </div>
+    <div class="wineQuickRatings span4">
+      <p class="starRating">✯✯✯</p>
+
+      <p class="dollarRating">$$</p>
+
+      <div class="subHeading">
+        <%= "#{@wine.color} #{@wine.classification.downcase} wine" %>
+      </div>
+      <div class="subHeading">
+        Grape/Region:
+        <% unless @wine.grape_wine_name.blank? %>
+          <%= @wine.grape_wine_name %>
+        <% else %>
+          Unknown
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

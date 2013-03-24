@@ -6,12 +6,12 @@
     <%= f.input :price, :as => :currency, :input_html => {rows: 1, class: "span2"}  %>
   </div>
   <div class="row">
-    <%= f.input :store, :input_html => {rows: 1, class: "span3"} %>
+    <%= f.input :store, :input_html => {rows: 1, class: "span4"} %>
   </div>
   <br/>
   <div class="row">
     <div class="span2 formButtonGroup">
-      <%= f.button :submit, "Save Purchase", class: "btn btn-primary btn-large" %>
+      <%= f.button :submit, "Save Purchase", class: "btn btn-large" %>
     </div>
     <div class="span2">
        <%= link_to "Cancel", wine_path(@wine), class: "btn btn-large btn-cancel" %>

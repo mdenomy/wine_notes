@@ -1,9 +1,28 @@
-<%= simple_form_for @wine, :html => { :class => 'form-inline' } do |f| %>
-  <%= f.input :producer %>
-  <%= f.input :brand_name %>
-  <%= f.input :year, :collection => 1990..2012 %>
-  <%= f.input :grape_wine_name, :label => 'Grape/Region' %>
-  <%= f.input :color, :collection => ["Red", "White", "Rose"] %>
-  <%= f.input :classification, :collection => ["Table", "Sparkling", "Dessert"] %>
-  <%= f.button :submit, "Save Wine", class: "btn btn-primary" %>
+<%= simple_form_for @wine, :html => {:class => 'form-inline'} do |f| %>
+  <div class="row">
+    <%= f.input :producer, :input_html => {rows: 1, class: "span4"} %>
+  </div>
+  <div class="row">
+    <%= f.input :brand_name, :input_html => {rows: 1, class: "span4"} %>
+  </div>
+  <div class="row">
+    <%= f.input :year, :collection => 1990..2012 %>
+  </div>
+  <div class="row">
+    <%= f.input :grape_wine_name, :label => 'Grape/Region', :input_html => {rows: 1, class: "span4"} %>
+  </div>
+  <div class="row">
+    <%= f.input :color, :collection => ["Red", "White", "Rose"] %>
+  </div>
+  <div class="row">
+    <%= f.input :classification, :collection => ["Table", "Sparkling", "Dessert"] %>
+  </div>
+  <div class="row">
+    <div class="span2 formButtonGroup">
+      <%= f.button :submit, "Save Wine", class: "btn btn-large" %>
+    </div>
+    <div class="span2">
+      <%= link_to "Cancel",:back, class: "btn btn-large btn-cancel" %>
+    </div>
+  </div>
 <% end %>
